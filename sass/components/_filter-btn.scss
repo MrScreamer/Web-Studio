@@ -1,0 +1,94 @@
+/* Сторінка Портфоліо */
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  // width: 100%;
+  margin-bottom: 35px;
+
+  @media screen and(min-width:768px) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  @media screen and(min-width:1200px) {
+    margin-bottom: 50px;
+  }
+
+  &__item {
+    &:nth-child(-n + 3) {
+      margin-bottom: 15px;
+    }
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+    // &:nth-child(3) {
+    //   margin-right: 0;
+    // }
+    @media screen and(min-width:768px) {
+      &:nth-child(-n + 3) {
+        margin-bottom: 0;
+      }
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+    @media screen and(min-width:1200px) {
+    }
+  }
+
+  &__btn {
+    background-color: $grey-bcg;
+
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+
+    border-radius: 4px;
+    text-align: center;
+    padding: 6px 22px;
+
+    transition: color 250ms $timing-function, background-color 250ms $timing-function,
+      box-shadow 250ms $timing-function;
+
+    transform-style: preserve-3d;
+    transition: all 500ms ease;
+    &:after {
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: $accent-color;
+      border-radius: 5px;
+      background-image: url('../../images/plane.svg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      content: '';
+      transform-origin: left bottom;
+      transform: rotateX(90deg);
+    }
+    &:hover,
+    &:focus {
+      transform-origin: center bottom;
+      transform: rotateX(-90deg) translateY(100%);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+      color: $white-text-color;
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
+      outline: none;
+    }
+
+    &--active {
+      background-color: $accent-color;
+      color: $white-text-color;
+
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+  }
+}

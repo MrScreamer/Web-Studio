@@ -1,0 +1,32 @@
+/* Логотип */
+.header {
+  z-index: 2;
+  border-bottom: 1px solid $header-border-color;
+  position: fixed;
+  background-color: inherit;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  @media screen and(min-width:768px) {
+    height: auto;
+  }
+
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and(min-width:768px) {
+      justify-content: start;
+      height: auto;
+    }
+  }
+
+  &__logo {
+    margin-right: 93px;
+  }
+
+  &__logo--dark {
+    color: $logo-text-color;
+  }
+}
